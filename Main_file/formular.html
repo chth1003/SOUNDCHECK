@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formular | Perfect Storm Launch Party</title>
+  <meta name="description" content="Få dit pass til Perfect Storm Launch Party.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/components.js" defer></script>
+  <script src="js/formular.js" defer></script>
+</head>
+<body data-page="formular">
+
+  <div id="site-header"></div>
+
+  <main id="main" class="page">
+    <div class="container split">
+
+      <div>
+        <h1>Formular</h1>
+        <p class="intro">Vælg dit pass og udfyld formularen. Bagefter sender vi dig videre til opsamlingssiden, hvor du får dit adgangskort.</p>
+      </div>
+
+      <form id="rsvp" class="form-card" novalidate>
+
+        <div class="field">
+          <label for="guest-name">Dit navn</label>
+          <input id="guest-name" name="guest" type="text" autocomplete="name" maxlength="60" required aria-describedby="err-guest">
+          <p class="error" id="err-guest" aria-live="polite"></p>
+        </div>
+
+        <div class="field">
+          <label for="guest-email">E-mail</label>
+          <input id="guest-email" name="email" type="email" autocomplete="email" required aria-describedby="err-email">
+          <p class="error" id="err-email" aria-live="polite"></p>
+        </div>
+
+        <fieldset aria-describedby="err-pass">
+          <legend>Vælg dit pass</legend>
+          <div class="pass-options">
+            <label class="pass-option">
+              <input type="radio" name="pass" value="stage">
+              <span class="pass-box"><strong>Stage Pass</strong><small>Tæt på scenen. Du ser alt og mærker lyden.</small></span>
+            </label>
+            <label class="pass-option">
+              <input type="radio" name="pass" value="floor">
+              <span class="pass-box"><strong>Eyewall Pass</strong><small>Midt på dansegulvet, i stormens øje.</small></span>
+            </label>
+            <label class="pass-option">
+              <input type="radio" name="pass" value="lounge">
+              <span class="pass-box"><strong>Calm Pass</strong><small>Lounge med bar, sofaer og fotovæg.</small></span>
+            </label>
+          </div>
+          <p class="error" id="err-pass" aria-live="polite"></p>
+        </fieldset>
+
+        <div class="field">
+          <label for="guests">Antal personer på passet</label>
+          <select id="guests" name="guests">
+            <option value="1">1 person</option>
+            <option value="2">2 personer</option>
+            <option value="3">3 personer</option>
+            <option value="4">4 personer</option>
+          </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Få mit pass</button>
+        <p class="form-note">Skoleprojekt: oplysningerne bliver ikke gemt eller sendt nogen steder.</p>
+      </form>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+</body>
+</html>

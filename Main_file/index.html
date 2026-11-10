@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forside | Perfect Storm Launch Party</title>
+    <meta name="description" content="Launch party for TXT's nye album PERFECT STORM – med albumlytning, lys og dans." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/config.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/forside.js" defer></script>
+  </head>
+  <body data-page="forside">
+    <div id="site-header"></div>
+
+    <main id="main">
+      <!-- Hero (fuld bredde) -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-inner">
+          <p class="eyebrow">16. november 2026 · København</p>
+          <h1 id="hero-title">Perfect Storm<br />Launch Party</h1>
+          <p class="lead">Vi lytter til TXT's nye album sammen – med mørke skyer, høj lyd og lyn i loftet. Kom og vær med, når stormen rammer.</p>
+          <ul class="chips">
+            <li>Døre kl. 19.00</li>
+            <li>Soundcheck Hall</li>
+            <li>Albumlytning + dans</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="formular.html">Sikr din plads</a>
+            <a class="btn btn-ghost" href="svg.html">Udforsk lokalet</a>
+          </div>
+        </div>
+        <div class="hero-wave" aria-hidden="true"></div>
+      </section>
+
+      <!-- Section med popup-artikler -->
+      <section class="section" aria-labelledby="about-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="about-title">Om aftenen</h2>
+            <p class="sub">Tre ting, du skal vide, før stormen rammer. Tryk på et kort for at læse mere.</p>
+          </div>
+          <div class="cards">
+            <button class="card" type="button" data-popup="popup-program" aria-haspopup="dialog">
+              <h3>Aftenens program</h3>
+              <p>Fra dørene åbner til sidste nummer på dansegulvet.</p>
+              <span class="more">Læs mere →</span>
+            </button>
+            <button class="card" type="button" data-popup="popup-dresscode" aria-haspopup="dialog">
+              <h3>Dresscode</h3>
+              <p>Mørke farver, sølv og noget, der fanger lyset.</p>
+              <span class="more">Læs mere →</span>
+            </button>
+            <button class="card" type="button" data-popup="popup-praktisk" aria-haspopup="dialog">
+              <h3>Praktisk info</h3>
+              <p>Sted, tidspunkt og hvad du skal have med.</p>
+              <span class="more">Læs mere →</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Teaser til SVG og formular (fuld bredde) -->
+      <section class="section band" aria-labelledby="teaser-title">
+        <div class="container">
+          <div class="section-head">
+            <h2 id="teaser-title">Gør dig klar</h2>
+            <p class="sub">Se, hvor du kan stå – og sikr dit pass.</p>
+          </div>
+          <div class="teasers">
+            <article class="teaser">
+              <h3>Udforsk lokalet</h3>
+              <p>Tre områder, tre stemninger. Klik rundt i planen og find dit sted.</p>
+              <a class="btn btn-ghost" href="svg.html">Se plantegningen</a>
+            </article>
+            <article class="teaser">
+              <h3>Få dit pass</h3>
+              <p>Vælg pass, udfyld formularen og få dit adgangskort med det samme.</p>
+              <a class="btn btn-primary" href="formular.html">Til formularen</a>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <!-- Popup-artikler -->
+    <dialog class="popup" id="popup-program" aria-labelledby="popup-program-title">
+      <div class="popup-body">
+        <button class="popup-close" type="button" data-close aria-label="Luk">×</button>
+        <article>
+          <p class="eyebrow">Artikel</p>
+          <h2 id="popup-program-title">Aftenens program</h2>
+          <p>Vi starter roligt og slutter med bas i brystkassen.</p>
+          <ul class="timeline">
+            <li><time>19.00</time><span>Dørene åbner. Velkomstdrik og billeder ved fotovæggen.</span></li>
+            <li><time>20.00</time><span>Lyset går ned, og vi spiller hele albummet fra start til slut.</span></li>
+            <li><time>21.15</time><span>Dansegulvet åbner med sange fra hele TXT-universet.</span></li>
+            <li><time>23.00</time><span>Sidste nummer. Tak for i aften.</span></li>
+          </ul>
+        </article>
+      </div>
+    </dialog>
+
+    <dialog class="popup" id="popup-dresscode" aria-labelledby="popup-dresscode-title">
+      <div class="popup-body">
+        <button class="popup-close" type="button" data-close aria-label="Luk">×</button>
+        <article>
+          <p class="eyebrow">Artikel</p>
+          <h2 id="popup-dresscode-title">Dresscode: stormvejr</h2>
+          <p>Der er ingen strenge regler, men aftenens stemning er mørk, blå og lidt uhyggelig-smuk.</p>
+          <ul class="facts">
+            <li>Farver: natblå, sort, sølv, lilla og hvide detaljer.</li>
+            <li>Ting, der fanger lyset: glitter, metal, lak eller lyse stoffer.</li>
+            <li>Fjer, vinger eller en glorie er meget velkomne.</li>
+            <li>Vælg tøj og sko, du kan danse i.</li>
+          </ul>
+        </article>
+      </div>
+    </dialog>
+
+    <dialog class="popup" id="popup-praktisk" aria-labelledby="popup-praktisk-title">
+      <div class="popup-body">
+        <button class="popup-close" type="button" data-close aria-label="Luk">×</button>
+        <article>
+          <p class="eyebrow">Artikel</p>
+          <h2 id="popup-praktisk-title">Praktisk info</h2>
+          <ul class="facts">
+            <li><strong>Hvornår:</strong> 16. november 2026, døre kl. 19.00.</li>
+            <li><strong>Hvor:</strong> Soundcheck Hall, København.</li>
+            <li><strong>Adgang:</strong> Du skal bruge dit pass. Få det i <a class="text-link" href="formular.html">formularen</a>, og vis det på skærmen eller print det.</li>
+            <li><strong>Gæster:</strong> Du kan tage op til tre venner med på samme pass.</li>
+          </ul>
+        </article>
+      </div>
+    </dialog>
+  </body>
+</html>
