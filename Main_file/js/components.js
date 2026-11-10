@@ -1,4 +1,3 @@
-
 (() => {
   const E = window.EVENT;
   const page = document.body.dataset.page;
@@ -10,9 +9,7 @@
     ["Get a pass", "formular.html", "Get a pass"],
   ];
 
-  const bars = [6, 12, 18, 10, 16, 8, 12]
-    .map((h, i) => `<rect x="${i * 4 + 1}" y="${(20 - h) / 2}" width="2.4" height="${h}" rx="1.2"/>`)
-    .join("");
+  const bars = [6, 12, 18, 10, 16, 8, 12].map((h, i) => `<rect x="${i * 4 + 1}" y="${(20 - h) / 2}" width="2.4" height="${h}" rx="1.2"/>`).join("");
 
   const headerEl = document.getElementById("site-header");
   if (headerEl) {
@@ -27,12 +24,7 @@
           <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
           <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul>
-              ${links
-                .map(
-                  ([key, href, label]) =>
-                    `<li><a href="${href}"${key === active ? ' aria-current="page"' : ""}>${label}</a></li>`
-                )
-                .join("")}
+              ${links.map(([key, href, label]) => `<li><a href="${href}"${key === active ? ' aria-current="page"' : ""}>${label}</a></li>`).join("")}
             </ul>
           </nav>
         </div>
