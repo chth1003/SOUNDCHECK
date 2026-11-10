@@ -1,17 +1,17 @@
 <!doctype html>
-<html lang="da">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interaktiv SVG | Perfect Storm Launch Party</title>
-  <meta name="description" content="Plantegning af lokalet med tre områder. Klik og udforsk.">
+  <title>Interactive SVG | Perfect Storm Launch Party</title>
+  <meta name="description" content="Interactive floor plan of the venue with three areas. Click and explore.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/config.js" defer></script>
   <script src="js/components.js" defer></script>
-  <script src="js/interaktiv-svg.js" defer></script>
+  <script src="js/interactive-svg.js" defer></script>
 </head>
 <body data-page="svg">
 
@@ -19,74 +19,74 @@
 
   <main id="main" class="page">
     <div class="container">
-      <h1>Interaktiv SVG</h1>
-      <p class="intro">Klik på et område i plantegningen, eller åbn et punkt til højre, og se, hvad der sker i lokalet.</p>
+      <h1>Interactive SVG</h1>
+      <p class="intro">Click on an area in the floor plan, or open a point on the right, and see what happens in the venue.</p>
 
       <div class="explore">
 
         <div class="svg-panel">
           <!--
-            Din SVG: hvert klikbart område er en <g class="zone" data-zone="...">.
-            Nøglen i data-zone skal matche data-zone på punktet i accordionen til højre.
+            Your SVG: every clickable area is a <g class="zone" data-zone="...">.
+            The key in data-zone must match the data-zone on the point in the accordion to the right.
           -->
-          <svg id="venue-map" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Plantegning af lokalet med tre områder: scenen, dansegulvet og lounge">
+          <svg id="venue-map" viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="Floor plan of the venue with three areas: the stage, dance floor, and lounge">
 
             <rect class="room" x="10" y="10" width="780" height="460" rx="24"/>
 
-            <!-- Pynt (ikke klikbar): højttalere og indgang -->
+            <!-- Decor (not clickable): speakers and entrance -->
             <circle class="decor" cx="180" cy="95" r="16"/>
             <circle class="decor" cx="180" cy="95" r="6"/>
             <circle class="decor" cx="620" cy="95" r="16"/>
             <circle class="decor" cx="620" cy="95" r="6"/>
             <rect class="decor" x="40" y="395" width="84" height="40" rx="8"/>
-            <text class="decor-label" x="82" y="420" text-anchor="middle">Indgang</text>
+            <text class="decor-label" x="82" y="420" text-anchor="middle">Entrance</text>
 
-            <!-- Område 1: scenen -->
-            <g class="zone" data-zone="stage" role="button" tabindex="0" aria-pressed="false" aria-label="Hovedscenen">
+            <!-- Area 1: stage -->
+            <g class="zone" data-zone="stage" role="button" tabindex="0" aria-pressed="false" aria-label="Main Stage">
               <rect class="shape" x="230" y="40" width="340" height="110" rx="14"/>
-              <text x="400" y="92" text-anchor="middle">Hovedscenen</text>
-              <text class="zone-sub" x="400" y="118" text-anchor="middle">Skærm, lys og lyd</text>
+              <text x="400" y="92" text-anchor="middle">Main Stage</text>
+              <text class="zone-sub" x="400" y="118" text-anchor="middle">Screen, lights, and sound</text>
             </g>
 
-            <!-- Område 2: dansegulvet -->
-            <g class="zone" data-zone="floor" role="button" tabindex="0" aria-pressed="false" aria-label="Dansegulvet, Eyewall">
+            <!-- Area 2: dance floor -->
+            <g class="zone" data-zone="floor" role="button" tabindex="0" aria-pressed="false" aria-label="Dance Floor, Eyewall">
               <ellipse class="shape" cx="400" cy="265" rx="215" ry="85"/>
               <ellipse class="ring" cx="400" cy="265" rx="160" ry="55"/>
-              <text x="400" y="262" text-anchor="middle">Dansegulvet</text>
+              <text x="400" y="262" text-anchor="middle">Dance Floor</text>
               <text class="zone-sub" x="400" y="286" text-anchor="middle">Eyewall</text>
             </g>
 
-            <!-- Område 3: lounge -->
+            <!-- Area 3: lounge -->
             <g class="zone" data-zone="lounge" role="button" tabindex="0" aria-pressed="false" aria-label="Calm Lounge">
               <rect class="shape" x="160" y="380" width="480" height="70" rx="14"/>
               <text x="400" y="412" text-anchor="middle">Calm Lounge</text>
-              <text class="zone-sub" x="400" y="434" text-anchor="middle">Bar, sofaer og fotovæg</text>
+              <text class="zone-sub" x="400" y="434" text-anchor="middle">Bar, sofas, and photo wall</text>
             </g>
 
           </svg>
-          <p class="map-hint">Tip: du kan også bruge Tab og Enter til at vælge et område.</p>
+          <p class="map-hint">Tip: you can also use Tab and Enter to select an area.</p>
         </div>
 
         <section class="accordion" aria-labelledby="acc-title">
-          <h2 id="acc-title">Udforsk eventet</h2>
+          <h2 id="acc-title">Explore the event</h2>
 
           <div class="acc-item is-open" data-zone="stage">
             <h3 class="acc-head">
-              <button class="acc-btn" type="button" id="acc-btn-stage" aria-expanded="true" aria-controls="acc-panel-stage">Hovedscenen</button>
+              <button class="acc-btn" type="button" id="acc-btn-stage" aria-expanded="true" aria-controls="acc-panel-stage">Main Stage</button>
             </h3>
             <div class="acc-panel" id="acc-panel-stage" role="region" aria-labelledby="acc-btn-stage">
-              <p>Her står skærmen med albummets visuals og lysshowet. Når lyset går ned, starter vi albummet fra første til sidste spor.</p>
-              <a class="text-link" href="formular.html?pass=stage">Vælg Stage Pass →</a>
+              <p>The main stage features the visuals and light show of the album. When the lights go down, we will start the album from the first to the last track.</p>
+              <a class="text-link" href="formular.html?pass=stage">Select Stage Pass →</a>
             </div>
           </div>
 
           <div class="acc-item" data-zone="floor">
             <h3 class="acc-head">
-              <button class="acc-btn" type="button" id="acc-btn-floor" aria-expanded="false" aria-controls="acc-panel-floor">Dansegulvet – Eyewall</button>
+              <button class="acc-btn" type="button" id="acc-btn-floor" aria-expanded="false" aria-controls="acc-panel-floor">Dance Floor – Eyewall</button>
             </h3>
             <div class="acc-panel" id="acc-panel-floor" role="region" aria-labelledby="acc-btn-floor" hidden>
-              <p>Midt i stormens øje. Her mærker du bassen i brystkassen, og efter lyttefesten åbner vi op for dans.</p>
-              <a class="text-link" href="formular.html?pass=floor">Vælg Eyewall Pass →</a>
+              <p>In the middle of the storm's eye. Here you feel the bass in your chest, and after the listening party we open up for dancing.</p>
+              <a class="text-link" href="formular.html?pass=floor">Select Eyewall Pass →</a>
             </div>
           </div>
 
@@ -95,8 +95,8 @@
               <button class="acc-btn" type="button" id="acc-btn-lounge" aria-expanded="false" aria-controls="acc-panel-lounge">Calm Lounge</button>
             </h3>
             <div class="acc-panel" id="acc-panel-lounge" role="region" aria-labelledby="acc-btn-lounge" hidden>
-              <p>Et roligt hjørne med bar, sofaer og fotovæg. Perfekt, når du vil have et billede, noget at drikke eller bare snakke om albummet.</p>
-              <a class="text-link" href="formular.html?pass=lounge">Vælg Calm Pass →</a>
+              <p>A quiet corner with a bar, sofas and a photo wall. Perfect when you want a picture, something to drink or just talk about the album.</p>
+              <a class="text-link" href="formular.html?pass=lounge">Select Calm Pass →</a>
             </div>
           </div>
         </section>

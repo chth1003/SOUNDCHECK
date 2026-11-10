@@ -1,6 +1,3 @@
-// Interaktiv SVG: de tre områder i plantegningen er koblet til tre accordion-punkter.
-// Klik på et område åbner det tilhørende punkt, og omvendt. Hover fremhæver begge.
-
 (() => {
   const zones = [...document.querySelectorAll("#venue-map .zone")];
   const items = [...document.querySelectorAll(".acc-item")];
@@ -11,7 +8,6 @@
 
   const zoneFor = (id) => zones.find((z) => z.dataset.zone === id);
 
-  // id = nøglen på det område, der skal være åbent (eller null for at lukke alle)
   function activate(id) {
     items.forEach((item) => {
       const open = item.dataset.zone === id;

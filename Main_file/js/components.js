@@ -1,17 +1,13 @@
-// Genbrugelige komponenter: header med navigation (og Menu-knap på mobil) og footer.
-// Hver side har <div id="site-header"></div> og <div id="site-footer"></div>,
-// og <body data-page="..."> fortæller, hvilket menupunkt der er aktivt.
 
 (() => {
   const E = window.EVENT;
   const page = document.body.dataset.page;
-  // Opsamling hører under Formular i menuen (som i Figma-designet)
-  const active = page === "opsamling" ? "formular" : page;
+  const active = page === "summary" ? "formular" : page;
 
   const links = [
-    ["forside", "index.html", "Forside"],
-    ["svg", "svg.html", "Interaktiv SVG"],
-    ["formular", "formular.html", "Formular"],
+    ["Home", "index.html", "Home"],
+    ["svg", "svg.html", "Explore the venue"],
+    ["Get a pass", "formular.html", "Get a pass"],
   ];
 
   const bars = [6, 12, 18, 10, 16, 8, 12]
@@ -22,14 +18,14 @@
   if (headerEl) {
     headerEl.outerHTML = `
       <header class="site-header" data-open="false">
-        <a class="skip-link" href="#main">Spring til indhold</a>
+        <a class="skip-link" href="#main">Skip to content</a>
         <div class="container header-inner">
           <a class="brand" href="index.html">
             <svg class="brand-mark" viewBox="0 0 28 20" fill="currentColor" aria-hidden="true">${bars}</svg>
             <span>${E.short}</span>
           </a>
           <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-          <nav class="site-nav" id="site-nav" aria-label="Hovedmenu">
+          <nav class="site-nav" id="site-nav" aria-label="Main navigation">
             <ul>
               ${links
                 .map(
@@ -61,7 +57,7 @@
       <footer class="site-footer">
         <div class="container footer-inner">
           <span>${E.short} · ${E.company}</span>
-          <span>Skoleprojekt · ikke tilknyttet TXT eller BIGHIT MUSIC</span>
+          <span>This is a school project · not affiliated with TXT or BIGHIT MUSIC</span>
         </div>
       </footer>`;
   }

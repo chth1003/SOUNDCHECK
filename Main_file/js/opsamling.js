@@ -1,7 +1,3 @@
-// Opsamling: læser brugerens valg fra URL'en og viser det som et adgangskort med stregkode.
-// Alt fra URL'en behandles som usikkert input: det vises kun som tekst (aldrig som HTML),
-// og pass-typen tjekkes mod en liste over gyldige nøgler.
-
 (() => {
   const out = document.getElementById("pass-output");
   if (!out) return;
@@ -27,10 +23,10 @@
   if (!valid) {
     const box = el("div", "empty-state");
     box.append(
-      el("h2", null, "Vi kunne ikke finde dit pass"),
-      el("p", null, "Det ser ud til, at du ikke har udfyldt formularen endnu."),
+      el("h2", null, "We could not find your pass"),
+      el("p", null, "It looks like you have not filled out the form yet."),
     );
-    const link = el("a", "btn btn-primary", "Til formularen");
+    const link = el("a", "btn btn-primary", "Go to the form");
     link.href = "formular.html";
     box.append(link);
     out.append(box);
@@ -38,8 +34,6 @@
   }
 
   const pass = PASSES[passKey];
-
-  // Et fast "tilfældigt" tal ud fra valget, så samme pass altid får samme kode og stregkode
   const hash = (text) => {
     let h = 2166136261;
     for (const ch of text) {
@@ -67,7 +61,7 @@
     svg.setAttribute("viewBox", "0 0 160 70");
     svg.setAttribute("class", "barcode");
     svg.setAttribute("role", "img");
-    svg.setAttribute("aria-label", `Stregkode for ${code}`);
+    svg.setAttribute("aria-label", `Barcode for ${code}`);
     const next = rng(seed);
     let x = 0;
     let dark = true;
@@ -95,12 +89,12 @@
 
   const details = el("dl", "ticket-details");
   [
-    ["Gæst", name],
+    ["Guest", name],
     ["Pass", pass.label],
-    ["Område", pass.area],
-    ["Antal", guests === 1 ? "1 person" : `${guests} personer`],
-    ["Dato", E.date],
-    ["Sted", E.place],
+    ["Area", pass.area],
+    ["Quantity", guests === 1 ? "1 person" : `${guests} people`],
+    ["Date", E.date],
+    ["Location", E.place],
   ].forEach(([label, value]) => {
     const row = el("div");
     row.append(el("dt", null, label), el("dd", null, value));
@@ -114,10 +108,10 @@
   ticket.append(main, stub);
 
   const actions = el("div", "ticket-actions no-print");
-  const print = el("button", "btn btn-primary", "Print eller gem som PDF");
+  const print = el("button", "btn btn-primary", "Print or save as PDF");
   print.type = "button";
   print.addEventListener("click", () => window.print());
-  const home = el("a", "btn btn-ghost", "Til forsiden");
+  const home = el("a", "btn btn-ghost", "Back to home");
   home.href = "index.html";
   actions.append(print, home);
 

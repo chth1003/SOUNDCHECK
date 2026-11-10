@@ -1,47 +1,47 @@
-# Perfect Storm Launch Party – Tema 4
+# Perfect Storm Launch Party – Theme 4
 
-Event-site med forside, interaktiv SVG, formular og opsamling. Ren HTML, CSS og JavaScript (ingen installation).
+Event site with a landing page, interactive SVG, form, and summary. Clean HTML, CSS, and JavaScript (no installation required).
 
-## Sådan åbner du det
+## How to open it
 
-1. **I VS Code:** File → Open Folder… og vælg mappen `tema4`.
-2. **I VS Code:** åbn Extensions i venstre side (firkant-ikonet), søg efter **Live Server** og klik Install.
-3. **I VS Code:** højreklik `index.html` i Explorer → **Open with Live Server**.
-4. **I browseren (preview):** siden åbner automatisk. Gem en fil i VS Code, så opdaterer preview af sig selv.
+1. **In VS Code:** File → Open Folder… and select the `tema4` folder.
+2. **In VS Code:** open Extensions in the left sidebar (the square icon), search for **Live Server**, and click Install.
+3. **In VS Code:** right-click `index.html` in Explorer → **Open with Live Server**.
+4. **In the browser (preview):** the page opens automatically. Save a file in VS Code, and the preview updates on its own.
 
-(Det virker også at dobbeltklikke på `index.html`, men Live Server er bedst til at teste formularen.)
+(You can also double-click `index.html`, but Live Server is best for testing the form.)
 
-## Filerne
+## Files
 
-| Fil | Hvad den gør |
-|---|---|
-| `index.html` | Forside: hero (fuld bredde), 3 popup-artikler, teaser til SVG + formular |
-| `svg.html` | Interaktiv SVG med 3 highlight-områder og 3 accordion-punkter |
-| `formular.html` | Formular, der sender videre til opsamlingssiden |
-| `opsamling.html` | Viser brugerens valg som et pass med stregkode |
-| `css/style.css` | Al styling. Farver ligger som variabler øverst (`:root`) |
-| `js/config.js` | Eventnavn, dato, sted og de 3 pass |
-| `js/components.js` | Header (med Menu-knap på mobil) og footer, brugt på alle sider |
-| `js/forside.js` | Bølgen i hero + popups |
-| `js/interaktiv-svg.js` | Kobler SVG-områder og accordion sammen |
-| `js/formular.js` | Validering og videresendelse |
-| `js/opsamling.js` | Tegner passet og stregkoden |
+| File                   | What it does                                                             |
+| ---------------------- | ------------------------------------------------------------------------ |
+| `index.html`           | Landing page: hero (full width), 3 popup articles, teaser for SVG + form |
+| `svg.html`             | Interactive SVG with 3 highlighted areas and 3 accordion items          |
+| `formular.html`        | Form that forwards to the summary page                                   |
+| `Summary.html`         | Displays the user’s selection as a pass with a barcode                   |
+| `css/style.css`        | All styling. Colors are stored as variables at the top (`:root`)        |
+| `js/config.js`         | Event name, date, location, and the 3 passes                             |
+| `js/components.js`     | Header (with a menu button on mobile) and footer, used on all pages     |
+| `js/forside.js`        | The wave in the hero + popups                                            |
+| `js/interaktiv-svg.js` | Connects the SVG areas and accordion together                           |
+| `js/formular.js`       | Validation and forwarding                                                |
+| `js/opsamling.js`      | Draws the pass and barcode                                              |
 
-## Sæt dit eget logo ind
+## Add your own logo
 
-1. **I VS Code:** læg din SVG-fil i `assets/` (fx `assets/logo.svg`).
-2. **I VS Code:** åbn `js/components.js` og find linjen med `<svg class="brand-mark" …>`.
-3. **I VS Code:** erstat hele den `<svg>…</svg>` med `<img class="brand-mark" src="assets/logo.svg" alt="">` og gem.
-4. **I browseren (preview):** tjek, at logoet står i headeren. Ret evt. `.brand-mark` i `css/style.css`, hvis det skal være større.
+1. **In VS Code:** place your SVG file in `assets/` (for example, `assets/logo.svg`).
+2. **In VS Code:** open `js/components.js` and find the line with `<svg class="brand-mark" …>`.
+3. **In VS Code:** replace the entire `<svg>…</svg>` with `<img class="brand-mark" src="assets/logo.svg" alt="">` and save.
+4. **In the browser (preview):** check that the logo appears in the header. If needed, adjust `.brand-mark` in `css/style.css` to make it larger.
 
-## Brug din egen SVG på SVG-siden
+## Use your own SVG on the SVG page
 
-1. **I VS Code:** åbn `svg.html` og find `<svg id="venue-map">`.
-2. **I VS Code:** erstat indholdet med din egen SVG. Hvert klikbart område skal være en `<g class="zone" data-zone="…" role="button" tabindex="0" aria-pressed="false" aria-label="…">`.
-3. **I VS Code:** sørg for, at `data-zone` matcher `data-zone` på de tilhørende `.acc-item` længere nede i filen.
+1. **In VS Code:** open `svg.html` and find `<svg id="venue-map">`.
+2. **In VS Code:** replace the content with your own SVG. Every clickable area should be an element like `<g class="zone" data-zone="…" role="button" tabindex="0" aria-pressed="false" aria-label="…">`.
+3. **In VS Code:** make sure the `data-zone` matches the corresponding `.acc-item` `data-zone` further down in the file.
 
-## Husk
+## Remember
 
-- Eventet, stedet og tiderne er opfundet til skoleprojektet.
-- Formularen har ingen server. E-mailen valideres, men gemmes ikke. Navn, pass og antal sendes kun med i URL'en til opsamlingssiden.
-- Brug ikke bandets officielle logo eller billeder på siden uden at tjekke jeres opgaveregler.
+- The event, location, and times are fictional for the school project.
+- The form has no backend server. The email is validated, but not saved. The name, pass, and quantity are only sent in the URL to the summary page.
+- Do not use the band’s official logo or images on the page without checking your assignment rules.

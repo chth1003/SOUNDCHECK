@@ -39,9 +39,9 @@
       firstInvalid = firstInvalid || field;
     };
 
-    if (name.length < 2) fail("guest", "Skriv dit navn (mindst 2 tegn).", nameInput);
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) fail("email", "Skriv en gyldig e-mailadresse.", emailInput);
-    if (!checked) fail("pass", "Vælg et pass.", form.querySelector('input[name="pass"]'));
+    if (name.length < 2) fail("guest", "Enter your name (at least 2 characters).", nameInput);
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) fail("email", "Enter a valid email address.", emailInput);
+    if (!checked) fail("pass", "Select a pass.", form.querySelector('input[name="pass"]'));
 
     if (firstInvalid) {
       firstInvalid.focus();
@@ -49,6 +49,6 @@
     }
 
     const params = new URLSearchParams({ name, pass: checked.value, guests });
-    location.href = `opsamling.html?${params}`;
+    location.href = `Summary.html?${params}`;
   });
 })();
